@@ -1,0 +1,83 @@
+.logo{
+    background: url(/src/calendar-react/assets/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.main-header{
+    display: flex;
+    margin: 10px;
+    height: 8%;
+    justify-content: center;
+    align-items: end;
+}
+.calendar-container {
+    display: flex;
+    height: 100%;
+  width: 100%;
+}
+.month-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 5%;
+  background-color:  #fafafa;
+  border: 1px solid  rgba(0, 0, 0, 0.235);
+  color: black;
+  font-weight: 600;
+  font-size: medium;
+}
+.weekday-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+  height: 5%;
+  font-weight: 500;
+  font-size: small;
+
+  /* background-color: aqua; */
+}
+.weekday-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid  rgba(0, 0, 0, 0.235);
+    border-right: 1px solid  rgba(0, 0, 0, 0.235);
+}
+.month-container{
+    height: 100%;
+    width: 80%;
+}
+.month {
+  display: grid;
+  height: 90%;
+  width: 100%;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+.calendar-day {
+  background-color: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.235);
+  padding: 6px;
+  font-size: smaller;
+
+}
+.calendar-day-inactive {
+    background-color: rgba(77, 77, 78, 0.123);
+    border: 1px solid  rgba(0, 0, 0, 0.235);
+  }
+.sidebar{
+    width: 20%;
+    height: 100%;
+    background-color: rgba(77, 77, 78, 0.381);
+    border:  1px solid  rgba(0, 0, 0, 0.235);
+}
