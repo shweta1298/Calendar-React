@@ -27,7 +27,7 @@
 .month-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   height: 5%;
   background-color:  #fafafa;
@@ -35,6 +35,18 @@
   color: black;
   font-weight: 600;
   font-size: medium;
+}
+.month-navigation-buttons{
+    cursor: pointer;
+    align-items: flex-end;
+    justify-content: center;
+    width: 20px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(0, 0, 0, 0.393);
+    height: 20px;
+    color:rgba(0, 0, 0, 0.393) ;
+    font-weight: 700;
+    display: flex;
 }
 .weekday-header {
   display: grid;

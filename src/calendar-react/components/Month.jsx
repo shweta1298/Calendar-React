@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Day from './Day';
 
 function Month(props) {
@@ -6,10 +6,35 @@ function Month(props) {
         month
     } = props;
     const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    const monthName=month[2][0].format("MMMM")
+    const [monthName, setMonthName] = useState(month[2][0].format("MMMM"))
+    const displayMonthName = month[2][0].format("MMMM, YYYY")
+    function handlePrevMonth(e) {
+        console.log('prevMonth :>> ',);
+
+    }
+    function handleNextMonth(e) {
+        console.log('nextMonth :>> ',);
+
+    }
     return (
-        <div className='month-container'>  
-            <div className='month-header'>{monthName}</div>
+        <div className='month-container'>
+            <div className='month-header'>
+                {/* <div
+                    onClick={handlePrevMonth}
+                    className='month-navigation-buttons'
+                >{"<"}</div> */}
+                <button onClick={handlePrevMonth}
+                    className='month-navigation-buttons'>{"<"}</button>
+                <span  >{displayMonthName}</span>
+                <button onClick={handleNextMonth}
+                    className='month-navigation-buttons'>{">"}</button>
+
+                {/* <div
+                    onClick={handleNextMonth}
+                    className='month-navigation-buttons'
+
+                >{">"}</div> */}
+            </div>
             <div className='weekday-header'>
                 {
                     days.map((day, idx) =>

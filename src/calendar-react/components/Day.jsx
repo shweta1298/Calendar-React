@@ -7,9 +7,18 @@ function Day(props) {
     } = props;
     const month=day.format("MMMM")
     const isDayInCurrentMonth=month===currentMonth
+    function handleDayClick(params) {
+        if(!isDayInCurrentMonth) return
 
+        console.log('day :>> ', day);
+
+    }
     return (
-        <div className={isDayInCurrentMonth?'calendar-day':'calendar-day-inactive'}>{isDayInCurrentMonth? day.format("D"):""}</div>
+        <div 
+            onClick={handleDayClick}
+            className={isDayInCurrentMonth?'calendar-day':'calendar-day-inactive'}
+            
+        >{isDayInCurrentMonth? day.format("D"):""}</div>
     )
 }
 

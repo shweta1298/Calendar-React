@@ -9,10 +9,10 @@ function Calendar() {
         <>
             <div className='main-container'>
                 <div className='main-header'>
-             
-                    <div className='logo' />
-                    <span style={{padding:"10px", fontSize:"larger",fontWeight:'bold',fontFamily:"sans-serif"}}>React Calendar</span>
-                    
+                    {/* <div className='logo' /> */}
+                    <span style={{ padding: "10px", fontSize: "larger", fontWeight: 'bold', fontFamily: "sans-serif" }}>
+                        React Calendar
+                    </span>
                 </div>
                 <div className="calendar-container">
                     <Sidebar />
