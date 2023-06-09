@@ -38,15 +38,7 @@
 }
 .month-navigation-buttons{
     cursor: pointer;
-    align-items: flex-end;
-    justify-content: center;
-    width: 20px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(0, 0, 0, 0.393);
-    height: 20px;
-    color:rgba(0, 0, 0, 0.393) ;
-    font-weight: 700;
-    display: flex;
+    color:  rgba(77, 77, 78, 0.423);
 }
 .weekday-header {
   display: grid;
@@ -92,4 +84,19 @@
     height: 100%;
     background-color: rgba(77, 77, 78, 0.381);
     border:  1px solid  rgba(0, 0, 0, 0.235);
+}
+.task-button{
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 10%;
+  border-radius: 1rem;
+  border: 1.5px solid   rgba(34, 34, 37, 0.628);
+  background-color: #fafafa;
+  width: 80%;
+  color: rgb(36, 42, 53);
+  height: 30px;
+}
+.plus-icon{
+  margin-right: 10px;
+  color: rgb(51, 84, 168);
 }

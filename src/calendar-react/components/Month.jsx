@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Day from './Day';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronCircleLeft, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 function Month(props) {
     const {
@@ -19,21 +21,15 @@ function Month(props) {
     return (
         <div className='month-container'>
             <div className='month-header'>
-                {/* <div
-                    onClick={handlePrevMonth}
-                    className='month-navigation-buttons'
-                >{"<"}</div> */}
-                <button onClick={handlePrevMonth}
-                    className='month-navigation-buttons'>{"<"}</button>
+                <div className="month-navigation-buttons">
+                    <FontAwesomeIcon onClick={handlePrevMonth} icon={faChevronCircleLeft} size="lg"/>
+                </div>
+
                 <span  >{displayMonthName}</span>
-                <button onClick={handleNextMonth}
-                    className='month-navigation-buttons'>{">"}</button>
+                <div className="month-navigation-buttons">
+                <FontAwesomeIcon onClick={handleNextMonth} icon={faChevronCircleRight} size="lg"/>
+                </div>
 
-                {/* <div
-                    onClick={handleNextMonth}
-                    className='month-navigation-buttons'
-
-                >{">"}</div> */}
             </div>
             <div className='weekday-header'>
                 {
