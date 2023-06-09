@@ -1,24 +1,31 @@
-import React from 'react'
+import dayjs from 'dayjs';
+import React, { useContext } from 'react'
+import GlobalContext from '../context/GlobalContext';
 
 function Day(props) {
     const {
-        currentMonth,
         day
     } = props;
-    const month=day.format("MMMM")
-    const isDayInCurrentMonth=month===currentMonth
+    const { monthIndex } = useContext(GlobalContext)
+
+    const isDayInCurrentMonth = day.month() === monthIndex
     function handleDayClick(params) {
-        if(!isDayInCurrentMonth) return
-
-        console.log('day :>> ', day);
-
+        if (!isDayInCurrentMonth) return
+    }
+    function getCurrentDayClass() {
+        if(!isDayInCurrentMonth) 
+            return "calendar-day-inactive"
+        else if(day.format("DD-MM-YYYY") === dayjs().format("DD-MM-YYYY"))
+            return "today"
+        else
+            return "calendar-day"
     }
     return (
-        <div 
+        <div
             onClick={handleDayClick}
-            className={isDayInCurrentMonth?'calendar-day':'calendar-day-inactive'}
-            
-        >{isDayInCurrentMonth? day.format("D"):""}</div>
+            className={getCurrentDayClass()}
+
+        >{isDayInCurrentMonth && day.format("D")}</div>
     )
 }
 

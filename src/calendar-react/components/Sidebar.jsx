@@ -10,7 +10,7 @@ function Sidebar() {
     <div className='sidebar'>
 
       <button onClick={createNewTask} class="task-button" >
-          <FontAwesomeIcon className="plus-icon" icon={faPlusSquare} size="lg" />
+          {/* <FontAwesomeIcon className="plus-icon" icon={faPlusSquare} size="lg" /> */}
         Create Task</button>
     </div>
   )
