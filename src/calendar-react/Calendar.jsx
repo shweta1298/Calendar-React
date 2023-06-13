@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useLayoutEffect, useState } from 'react'
 import "./styles/Calendar.css"
 import { getMonth } from './utils/dayUtils';
 import Month from './components/Month';
@@ -6,13 +6,16 @@ import Sidebar from './components/Sidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import GlobalContext from './context/GlobalContext';
-function Calendar() {
-    const { monthIndex} = useContext(GlobalContext)
-
+function Calendar(props) {
+    const {
+        //customization props
+        showSideBar,
+    } = props;
+    const { monthIndex, year } = useContext(GlobalContext)
     const [currentMonth, setCurrentMonth] = useState(getMonth(monthIndex))
-    useEffect(() => {
-        setCurrentMonth(getMonth(monthIndex))
-    }, [monthIndex])
+    useLayoutEffect(() => {
+        setCurrentMonth(getMonth(year, monthIndex))
+    }, [year,monthIndex])
     return (
         <>
             <div className='main-container'>
@@ -23,7 +26,7 @@ function Calendar() {
                     </span>
                 </div>
                 <div className="calendar-container">
-                    <Sidebar />
+                    {showSideBar && <Sidebar />}
                     <Month month={currentMonth} />
                 </div>
             </div>

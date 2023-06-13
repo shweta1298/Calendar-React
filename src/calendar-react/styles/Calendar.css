@@ -26,11 +26,18 @@
   display: flex;
   height: 100%;
   width: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.navigate-months{
+  display: flex;
+  width: inherit;
+  justify-content: center;
+  align-items: center;
 }
 .month-header {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   width: 100%;
   height: 5%;
   background-color: rgba(24, 38, 64, 0.829);
@@ -39,10 +46,21 @@
   font-weight: 600;
   font-size: medium;
 }
-.month-navigation-buttons {
+.month-navigate-button-prev{
   cursor: pointer;
-  color: fafafa;
+  color: #fafafa;
+  position: fixed;
+  margin-left: 10px;
 }
+.month-navigate-button-next{
+  cursor: pointer;
+  color: #fafafa;
+  position: fixed;
+  right: 0;
+  margin-right: 10px;
+  
+}
+
 .weekday-header {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -50,8 +68,6 @@
   height: 5%;
   font-weight: 500;
   font-size: small;
-
-  /* background-color: aqua; */
 }
 .weekday-name {
   display: flex;
@@ -59,17 +75,16 @@
   justify-content: center;
   border-left: 1px solid rgba(0, 0, 0, 0.235);
   border-right: 1px solid rgba(0, 0, 0, 0.235);
+
 }
 .month-container {
   height: 100%;
-  width: 80%;
+  width: 100%;
 }
 .month {
   display: grid;
   height: 90%;
   width: 100%;
-  /* grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(5, 1fr); */
 }
 .calendar-day {
   background-color: #fafafa;
@@ -108,15 +123,18 @@
 }
 .today-button {
   cursor: pointer;
-  background-color: #fafafa;
-  border: 2px solid #fafafa;
-  border-radius: 1rem;
-  color: rgba(24, 38, 64, 0.829);
-  font-size: small;
-  font-weight: 600;
-  width: 60px;
-  height: 20px;
-  float: left;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fafafa;
+  font-size: medium;
+  font-weight: 400;
+  height: 5%;
+
+
+  background-color: rgb(49 49 49);
+
 }
 .task-button:hover {
   background-color: rgba(24, 38, 64, 0.829);

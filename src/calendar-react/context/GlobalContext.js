@@ -1,10 +1,12 @@
-import dayjs from 'dayjs';
-import React from 'react'
+import { createContext } from 'react'
 
-const GlobalContext=React.createContext({
-    monthIndex:0,
-    setMonthIndex:(index)=>{},
- 
+const GlobalContext = createContext({
+    monthIndex: 0,
+    year: "",
+    setMonthIndex: (index) => { },
+    setYear: (newYear) => { },
+
+
 })
 
 export default GlobalContext;

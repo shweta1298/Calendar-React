@@ -1,8 +1,7 @@
 import dayjs from "dayjs";
 
-export function getMonth(month = dayjs().month()) {
+export function getMonth(year,month = dayjs().month()) {
     month = Math.floor(month);
-    const year = dayjs().year();
     const firstDayOfTheMonth = dayjs(new Date(year, month, 0)).day();
     let currentMonthCount = 0 - firstDayOfTheMonth;
     function getNumberOfWeeks() {

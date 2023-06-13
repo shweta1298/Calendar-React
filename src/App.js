@@ -2,7 +2,9 @@ import Calendar from './calendar-react/Calendar';
 
 function App() {
   return (
-   <Calendar />
+    <Calendar
+      showSideBar={true}
+    />
   );
 }
 
