@@ -4,6 +4,7 @@ function App() {
   return (
     <Calendar
       showSideBar={true}
+      
     />
   );
 }
