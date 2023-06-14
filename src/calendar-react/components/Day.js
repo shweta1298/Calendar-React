@@ -4,18 +4,28 @@ import GlobalContext from '../context/GlobalContext';
 
 function Day(props) {
     const {
-        day
+        day,
+        onDayClicked,
     } = props;
-    const { monthIndex } = useContext(GlobalContext)
+    const { monthIndex, year } = useContext(GlobalContext)
 
     const isDayInCurrentMonth = day.month() === monthIndex
-    function handleDayClick(params) {
+
+    function handleDayClick(e) {
         if (!isDayInCurrentMonth) return
+        onDayClicked?.({
+            type: "dayClicked",
+            event: e,
+            month: day.format("MMMM"),
+            currentMonth: dayjs().format("MMMM"),
+            day: day.format("DD-MM-YYYY"),
+            today: dayjs().format("DD-MM-YYYY")
+        })
     }
     function getCurrentDayClass() {
-        if(!isDayInCurrentMonth) 
+        if (!isDayInCurrentMonth)
             return "calendar-day-inactive"
-        else if(day.format("DD-MM-YYYY") === dayjs().format("DD-MM-YYYY"))
+        else if (day.format("DD-MM-YYYY") === dayjs().format("DD-MM-YYYY"))
             return "today"
         else
             return "calendar-day"

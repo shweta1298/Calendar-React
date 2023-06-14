@@ -7,14 +7,19 @@ import dayjs from 'dayjs';
 
 function Month(props) {
     const {
-        month
+        month,
+        onDayClicked,
     } = props;
     const { monthIndex, setMonthIndex, year, setYear } = useContext(GlobalContext)
     const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",]
     const [monthName, setMonthName] = useState()
+   
+  
     useEffect(() => {
         setMonthName(dayjs(new Date(year, monthIndex)).format("MMMM, YYYY"))
     }, [monthIndex, year])
+
+  
     function handlePrevMonth(e) {
         if (monthIndex - 1 === -1) {
             setYear(year - 1)
@@ -63,7 +68,7 @@ function Month(props) {
             }}>
                 {month.map((week, weekIndex) =>
                     week.map((day, dayIndex) =>
-                        <Day key={dayIndex} day={day} />
+                        <Day key={dayIndex} day={day} onDayClicked={onDayClicked} />
                     )
                 )}
             </div></div>

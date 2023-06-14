@@ -10,6 +10,7 @@ function Calendar(props) {
     const {
         //customization props
         showSideBar,
+        onDayClicked,
     } = props;
     const { monthIndex, year } = useContext(GlobalContext)
     const [currentMonth, setCurrentMonth] = useState(getMonth(monthIndex))
@@ -27,7 +28,7 @@ function Calendar(props) {
                 </div>
                 <div className="calendar-container">
                     {showSideBar && <Sidebar />}
-                    <Month month={currentMonth} />
+                    <Month month={currentMonth} onDayClicked={onDayClicked}/>
                 </div>
             </div>
 
