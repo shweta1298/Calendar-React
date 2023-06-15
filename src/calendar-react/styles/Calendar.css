@@ -29,7 +29,7 @@
   user-select: none;
   -webkit-user-select: none;
 }
-.navigate-months{
+.navigate-months {
   display: flex;
   width: inherit;
   justify-content: center;
@@ -46,19 +46,18 @@
   font-weight: 600;
   font-size: medium;
 }
-.month-navigate-button-prev{
+.month-navigate-button-prev {
   cursor: pointer;
   color: #fafafa;
   position: fixed;
   margin-left: 10px;
 }
-.month-navigate-button-next{
+.month-navigate-button-next {
   cursor: pointer;
   color: #fafafa;
   position: fixed;
   right: 0;
   margin-right: 10px;
-  
 }
 
 .weekday-header {
@@ -75,7 +74,6 @@
   justify-content: center;
   border-left: 1px solid rgba(0, 0, 0, 0.235);
   border-right: 1px solid rgba(0, 0, 0, 0.235);
-
 }
 .month-container {
   height: 100%;
@@ -103,7 +101,6 @@
   color: #fafafa;
   font-size: smaller;
   cursor: pointer;
-
 }
 .calendar-day-inactive {
   background-color: rgba(77, 77, 78, 0.123);
@@ -141,8 +138,6 @@
   border-style: solid;
   border-width: 2px 2px 0 2px;
   height: 5%;
- 
-
 }
 .task-button:hover {
   background-color: rgba(24, 38, 64, 0.829);
@@ -152,4 +147,164 @@
 .plus-icon {
   margin-right: 10px;
   color: rgba(24, 38, 64, 0.829);
+}
+.event-modal-container {
+  display: flex;
+  width: 350px;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  filter: drop-shadow(0 0 0.25rem rgba(0, 0, 0, 0.235));
+  background-color: #fafafa;
+  left: 45%;
+  top: 30%;
+}
+.modal-title-bar {
+  background-color: rgba(24, 38, 64, 0.829);
+  color: black;
+  width: inherit;
+  height: 40px;
+  align-items: center;
+  justify-content: flex-end;
+  display: flex;
+}
+.close-button {
+  cursor: pointer;
+  color: #fafafa;
+  margin-right: 10px;
+  height: 25px;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.modal-content-row{
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  align-items: baseline;
+}
+.event-container {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+.event {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5rem;
+  height: 20px;
+  margin: 2px;
+  padding: 1px;
+}
+/*form css*/
+.title {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-family: sans-serif;
+  font-size: medium;
+  font-weight: 600;
+}
+.start-time {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-family: sans-serif;
+  font-size: medium;
+  font-weight: 600;
+}
+.end-time {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-family: sans-serif;
+  font-size: medium;
+  font-weight: 600;
+}
+.desc {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-family: sans-serif;
+  font-size: medium;
+  font-weight: 600;
+}
+.color {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-family: sans-serif;
+  font-size: medium;
+  font-weight: 600;
+}
+.title-input {
+  margin: 10px;
+  height: 25px;
+  border-radius: 0.3rem;
+  padding-inline-start: 10px;
+  border: 1px solid #3f4a60;
+}
+.start-time-input {
+  margin: 10px;
+  height: 25px;
+  border-radius: 0.3rem;
+  padding-inline-start: 10px;
+  border: 1px solid #3f4a60;
+}
+.end-time-input {
+  margin: 10px;
+  height: 25px;
+  border-radius: 0.3rem;
+  padding-inline-start: 10px;
+  border: 1px solid #3f4a60;
+}
+.desc-input {
+  margin: 10px;
+  height: 70px;
+  border-radius: 0.3rem;
+  padding-inline-start: 10px;
+  border: 1px solid #3f4a60;
+}
+.color-input {
+  /* margin: 10px;
+  height: 30px; */
+  width: initial;
+  margin: 10px;
+  height: 25px;
+  border-radius: 0.3rem;
+  border: 1px solid #3f4a60;
+}
+.save-btn{
+  width: 100px;
+  height: 30px;
+  background-color: #3f4a60;
+  margin-left: 40%;
+  color: #fafafa;
+  border-radius: 1.5rem;
+  border: none;
+}
+.cancel-btn{
+  width: 100px;
+  height: 30px;
+  background-color: #3f4a60;
+  margin-left: 10%;
+  color: #fafafa;
+  border-radius: 1.5rem;
+  border: none;
+}
+.modal-btn-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: baseline;
+  margin: 10px 5px;
+  height: 20px;
+}
+.modal-title{
+  align-self: center;
+  position: absolute;
+  left: 0;
+  color: #fafafa;
+  font-family: sans-serif;
+  margin-inline-start: 15px;
 }

@@ -5,10 +5,10 @@ import GlobalContext from '../context/GlobalContext';
 function Day(props) {
     const {
         day,
+        dayEvents,
         onDayClicked,
     } = props;
     const { monthIndex, year } = useContext(GlobalContext)
-
     const isDayInCurrentMonth = day.month() === monthIndex
 
     function handleDayClick(e) {
@@ -35,7 +35,19 @@ function Day(props) {
             onClick={handleDayClick}
             className={getCurrentDayClass()}
 
-        >{isDayInCurrentMonth && day.format("D")}</div>
+        >
+            {isDayInCurrentMonth && day.format("D")}
+            <div className="event-container">
+                {dayEvents.map((dayEv,idx) =>
+                    <div
+                        key={`${day}${idx}`}
+                        title={dayEv.description}
+                        className='event'
+                        style={{ ...dayEv.eventStyle }}>
+                        {dayEv.title}
+                    </div>)}
+            </div>
+        </div>
     )
 }
 

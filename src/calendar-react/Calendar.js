@@ -6,19 +6,24 @@ import Sidebar from './components/Sidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import GlobalContext from './context/GlobalContext';
+import EventModal from './components/EventModal';
 function Calendar(props) {
     const {
+        events,
         //customization props
         showSideBar,
+        //Event callback props
         onDayClicked,
     } = props;
-    const { monthIndex, year } = useContext(GlobalContext)
+    const { monthIndex, year ,showEventModal,setShowEventModal } = useContext(GlobalContext)
     const [currentMonth, setCurrentMonth] = useState(getMonth(monthIndex))
     useLayoutEffect(() => {
         setCurrentMonth(getMonth(year, monthIndex))
-    }, [year,monthIndex])
+    }, [year, monthIndex])
+    console.log('showEventModal :>> ', showEventModal);
     return (
         <>
+            {showEventModal && <EventModal />}
             <div className='main-container'>
                 <div className='main-header'>
                     <FontAwesomeIcon className='logo' icon={faCalendar} size='xl' />
@@ -28,7 +33,7 @@ function Calendar(props) {
                 </div>
                 <div className="calendar-container">
                     {showSideBar && <Sidebar />}
-                    <Month month={currentMonth} onDayClicked={onDayClicked}/>
+                    <Month month={currentMonth} onDayClicked={onDayClicked} events={events} />
                 </div>
             </div>
 
