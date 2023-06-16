@@ -71,7 +71,7 @@ function Month(props) {
                     week.map((day, dayIndex) => {
                         let dayEvents = []
                         events.forEach((ev) => {
-                            if (day.format("DD-MM-YYYY") === ev.date) dayEvents.push(ev)
+                            if (day.format("YYYY-MM-DD") === ev.date) dayEvents.push(ev)
                         })
                         return <Day
                             key={dayIndex}

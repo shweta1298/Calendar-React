@@ -5,8 +5,10 @@ const GlobalContext = createContext({
     year: "",
     setMonthIndex: (index) => { },
     setYear: (newYear) => { },
-    showEventModal:false,
-    setShowEventModal:()=>{},
+    showEventModal: false,
+    setShowEventModal: () => { },
+    currentEvent: {},
+    setCurrentEvent: (newEvent) => { }
 })
 
 export default GlobalContext;

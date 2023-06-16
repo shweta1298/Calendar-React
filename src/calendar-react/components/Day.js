@@ -8,7 +8,7 @@ function Day(props) {
         dayEvents,
         onDayClicked,
     } = props;
-    const { monthIndex, year } = useContext(GlobalContext)
+    const { monthIndex, setShowEventModal,setCurrentEvent } = useContext(GlobalContext)
     const isDayInCurrentMonth = day.month() === monthIndex
 
     function handleDayClick(e) {
@@ -19,8 +19,10 @@ function Day(props) {
             month: day.format("MMMM"),
             currentMonth: dayjs().format("MMMM"),
             day: day.format("DD-MM-YYYY"),
-            today: dayjs().format("DD-MM-YYYY")
+            today: dayjs().format("DD-MM-YYYY"),
+            events:dayEvents
         })
+        setShowEventModal(true)
     }
     function getCurrentDayClass() {
         if (!isDayInCurrentMonth)
@@ -43,7 +45,8 @@ function Day(props) {
                         key={`${day}${idx}`}
                         title={dayEv.description}
                         className='event'
-                        style={{ ...dayEv.eventStyle }}>
+                        onClick={()=>setCurrentEvent(dayEv)}
+                        style={{ backgroundColor: dayEv.backgroundColor, color:dayEv.color }}>
                         {dayEv.title}
                     </div>)}
             </div>

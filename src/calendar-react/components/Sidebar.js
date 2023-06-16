@@ -4,11 +4,11 @@ import React, { useContext, useEffect } from 'react'
 import GlobalContext from '../context/GlobalContext';
 
 function Sidebar() {
-  const { setShowEventModal } = useContext(GlobalContext)
-  // useEffect(()=>{
-  //   setShowEventModal(showEventModal)
-  // },[showEventModal])
+  const { setShowEventModal ,setCurrentEvent} = useContext(GlobalContext)
   function createNewTask(params) {
+    setCurrentEvent({
+      title:"Create New Task"
+    })
     setShowEventModal(true)
   }
   return (

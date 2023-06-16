@@ -20,7 +20,6 @@ function Calendar(props) {
     useLayoutEffect(() => {
         setCurrentMonth(getMonth(year, monthIndex))
     }, [year, monthIndex])
-    console.log('showEventModal :>> ', showEventModal);
     return (
         <>
             {showEventModal && <EventModal />}
