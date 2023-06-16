@@ -23,6 +23,10 @@ function EventModal() {
                 </div>
 
                 <div className='modal-content-row'>
+                    <div className="date">Date :</div>
+                    <input className="date-input" type='date'></input>
+                </div>
+                <div className='modal-content-row'>
                     <div className="start-time">Start Time :</div>
                     <input className="start-time-input" type='time'></input>
                 </div>
