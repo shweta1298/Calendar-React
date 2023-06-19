@@ -4,14 +4,21 @@ import React, { useContext } from 'react'
 import GlobalContext from '../context/GlobalContext'
 
 function EventModal() {
-    const { setShowEventModal, currentEvent } = useContext(GlobalContext)
+    const { setShowEventModal, currentEvent, setCurrentEvent } = useContext(GlobalContext)
     return (
         <div className='event-modal-container'>
             <div className="modal-title-bar" style={{ backgroundColor: currentEvent.backgroundColor }}>
 
                 <div className="modal-title">{currentEvent.title}</div>
                 <div className="close-btn-flex">
-                    <FontAwesomeIcon onClick={() => setShowEventModal(false)} className='close-button' icon={faCircleXmark} size='lg'></FontAwesomeIcon>
+                    <FontAwesomeIcon onClick={() => {
+                        setShowEventModal(false);
+                        setCurrentEvent({
+                            backgroundColor: "#182640d3",
+                            color: "white",
+                            title: "Create New Task"
+                        })
+                    }} className='close-button' icon={faCircleXmark} size='lg'></FontAwesomeIcon>
 
                 </div>
             </div>
@@ -46,7 +53,14 @@ function EventModal() {
                 </div>
                 <div className='modal-btn-row'>
                     <button className="save-btn">Save</button>
-                    <button className="cancel-btn" onClick={() => setShowEventModal(false)}>Cancel</button>
+                    <button className="cancel-btn" onClick={() => {
+                        setShowEventModal(false);
+                        setCurrentEvent({
+                            backgroundColor: "#182640d3",
+                            color: "white",
+                            title: "Create New Task"
+                        })
+                    }}>Cancel</button>
                 </div>
             </div>
         </div>
