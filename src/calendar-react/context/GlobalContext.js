@@ -8,7 +8,9 @@ const GlobalContext = createContext({
     showEventModal: false,
     setShowEventModal: () => { },
     currentEvent: {},
-    setCurrentEvent: (newEvent) => { }
+    setCurrentEvent: (newEvent) => { },
+    savedEvents:[],
+    setSavedEvents:(events)=>{}
 })
 
 export default GlobalContext;

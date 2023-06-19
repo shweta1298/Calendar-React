@@ -13,6 +13,7 @@ function Day(props) {
 
     function handleDayClick(e) {
         if (!isDayInCurrentMonth) return
+        e.stopPropagation();
         onDayClicked?.({
             type: "dayClicked",
             event: e,
@@ -22,12 +23,7 @@ function Day(props) {
             today: dayjs().format("DD-MM-YYYY"),
             events:dayEvents
         })
-        setCurrentEvent({
-            backgroundColor: "#182640d3",
-            color: "white",
-            title: "Create New Task",
-            date: day.format("YYYY-MM-DD")
-        })
+
         setShowEventModal(true)
     }
     function getCurrentDayClass() {
@@ -51,7 +47,7 @@ function Day(props) {
                         key={`${day}${idx}`}
                         title={dayEv.description}
                         className='event'
-                        onClick={()=>setCurrentEvent(dayEv)}
+                        onClick={(e)=>{ setCurrentEvent(dayEv)}}
                         style={{ backgroundColor: dayEv.backgroundColor, color:dayEv.color }}>
                         {dayEv.title}
                     </div>)}

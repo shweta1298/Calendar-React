@@ -17,6 +17,7 @@ export default function ContextWrapper(props) {
             color: "white",
             title: "Create New Task"
         })
+    const [savedEvents,setSavedEvents]=useState([])
     const GlobalContextProviderValue = useMemo(() => (
         {
             monthIndex,
@@ -27,7 +28,9 @@ export default function ContextWrapper(props) {
             setShowEventModal,
             currentEvent,
             setCurrentEvent,
-        }), [monthIndex, year, showEventModal, currentEvent]
+            savedEvents,
+            setSavedEvents
+        }), [monthIndex, year, showEventModal, currentEvent,savedEvents]
     );
 
     return (

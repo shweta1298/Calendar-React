@@ -11,7 +11,7 @@ function Month(props) {
         events,
         onDayClicked,
     } = props;
-    const { monthIndex, setMonthIndex, year, setYear } = useContext(GlobalContext)
+    const { monthIndex, setMonthIndex, year, setYear,savedEvents } = useContext(GlobalContext)
     const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",]
     const [monthName, setMonthName] = useState()
 
@@ -70,7 +70,7 @@ function Month(props) {
                 {month.map((week, weekIndex) =>
                     week.map((day, dayIndex) => {
                         let dayEvents = []
-                        events.forEach((ev) => {
+                        savedEvents.forEach((ev) => {
                             if (day.format("YYYY-MM-DD") === ev.date) dayEvents.push(ev)
                         })
                         return <Day
