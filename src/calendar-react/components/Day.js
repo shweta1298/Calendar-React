@@ -22,6 +22,12 @@ function Day(props) {
             today: dayjs().format("DD-MM-YYYY"),
             events:dayEvents
         })
+        setCurrentEvent({
+            backgroundColor: "#182640d3",
+            color: "white",
+            title: "Create New Task",
+            date: day.format("YYYY-MM-DD")
+        })
         setShowEventModal(true)
     }
     function getCurrentDayClass() {
