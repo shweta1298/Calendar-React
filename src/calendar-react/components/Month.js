@@ -70,6 +70,7 @@ function Month(props) {
                 {month.map((week, weekIndex) =>
                     week.map((day, dayIndex) => {
                         let dayEvents = []
+                        // console.log('savedEvents :>> ', savedEvents);
                         savedEvents.forEach((ev) => {
                             if (day.format("YYYY-MM-DD") === ev.date) dayEvents.push(ev)
                         })
