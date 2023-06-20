@@ -21,7 +21,7 @@ function Calendar(props) {
         setCurrentMonth(getMonth(year, monthIndex))
     }, [year, monthIndex])
     useEffect(()=>{
-        setSavedEvents(events)
+        setSavedEvents(events??[])
     },[])
     return (
         <>

@@ -29,8 +29,8 @@ function Day(props) {
     function getCurrentDayClass() {
         if (!isDayInCurrentMonth)
             return "calendar-day-inactive"
-        else if (day.format("DD-MM-YYYY") === dayjs().format("DD-MM-YYYY"))
-            return "today"
+        // else if (day.format("DD-MM-YYYY") === dayjs().format("DD-MM-YYYY"))
+        //     return "today"
         else
             return "calendar-day"
     }
@@ -40,7 +40,7 @@ function Day(props) {
             className={getCurrentDayClass()}
 
         >
-            {isDayInCurrentMonth && day.format("D")}
+           <span className={day.format("DD-MM-YYYY") === dayjs().format("DD-MM-YYYY")?"today":""}>{ day.format("D")}</span> 
             <div className="event-container">
                 {dayEvents.map((dayEv,idx) =>
                     <div

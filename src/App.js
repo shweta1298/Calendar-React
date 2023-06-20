@@ -47,8 +47,8 @@ function App() {
   ]
   return (
     <Calendar
-      showSideBar={true}
-      events={events}
+      showSideBar={false}
+     // events={events}
     onDayClicked={(e)=>console.log('e :>> ', e)}
     />
   );
