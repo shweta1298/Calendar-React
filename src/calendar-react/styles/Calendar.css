@@ -74,6 +74,7 @@
   font-family: sans-serif;
   font-weight: 700;
   font-size: larger;
+  padding: 15px;
 }
 .month-container {
   height: 100%;
@@ -99,8 +100,8 @@
   justify-content: center;
 }
 .today {
-  color:  #fafafa;
-  background-color:  rgba(24, 38, 64, 0.829);
+  color: #fafafa;
+  background-color: rgba(24, 38, 64, 0.829);
   border-radius: 2rem;
   padding: 12px;
   font-size: medium;
@@ -136,7 +137,9 @@
 .today-button {
   cursor: pointer;
   width: 100%;
-  display: flex;
+  /* display: flex; */
+  display: none;
+
   align-items: center;
   justify-content: center;
   background-color: #fafafa;
