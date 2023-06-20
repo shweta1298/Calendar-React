@@ -8,7 +8,6 @@ import dayjs from 'dayjs';
 function Month(props) {
     const {
         month,
-        events,
         onDayClicked,
     } = props;
     const { monthIndex, setMonthIndex, year, setYear,savedEvents } = useContext(GlobalContext)

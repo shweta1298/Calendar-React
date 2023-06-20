@@ -1,4 +1,4 @@
-import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext, useState } from 'react'
 import GlobalContext from '../context/GlobalContext'
@@ -41,7 +41,7 @@ function EventModal() {
                             color: "white",
                             title: "Create New Task"
                         })
-                    }} className='close-button' icon={faCircleXmark} size='lg'></FontAwesomeIcon>
+                    }} className='close-button' icon={faXmark} size='sm'></FontAwesomeIcon>
 
                 </div>
             </div>

@@ -15,7 +15,7 @@ function Calendar(props) {
         //Event callback props
         onDayClicked,
     } = props;
-    const { monthIndex, year ,showEventModal,savedEvents,setSavedEvents } = useContext(GlobalContext)
+    const { monthIndex, year ,showEventModal,setSavedEvents } = useContext(GlobalContext)
     const [currentMonth, setCurrentMonth] = useState(getMonth(monthIndex))
     useLayoutEffect(() => {
         setCurrentMonth(getMonth(year, monthIndex))
