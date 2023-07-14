@@ -1,4 +1,0 @@
-# React Calendar
-
-## Available Features
-

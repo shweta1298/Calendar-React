@@ -1,57 +1,20 @@
-import Calendar from './calendar-react/Calendar';
-
-function App() {
-  const events = [
-    {
-      date: "2023-06-13",
-      title: "Meeting",
-      description: "Discussion about rdg",
-      allDayEvent: false,
-      eventStartTime: "12:30",
-      eventEndTime: "13:30",
-      backgroundColor: "skyblue",
-      color: "black",
-
-    },
-    {
-      date: "2023-06-13",
-      title: "Scrum",
-      description: "Daily standup",
-      allDayEvent: false,
-      eventStartTime: "10:15",
-      eventEndTime: "10:30",
-      backgroundColor: "green",
-      color: "white",
-    },
-    {
-      date: "2023-06-15",
-      title: "Call",
-      description: "Discussion about scheduler",
-      allDayEvent: false,
-      eventStartTime: "15:30",
-      eventEndTime: "16:30",
-      backgroundColor: "gray",
-      color: "black",
-    },
-    {
-      date: "2023-06-08",
-      title: "Lunch",
-      // description: "Discussion about gantt",
-      allDayEvent: false,
-      eventStartTime: "10:30",
-      eventEndTime: "11:30",
-      backgroundColor: "red",
-      color: "white",
-
-    },
-  ]
-  return (
-    <Calendar
-      showSideBar={false}
-     // events={events}
-    onDayClicked={(e)=>console.log('e :>> ', e)}
-    />
-  );
+import React, { useEffect, useState } from "react";
+import Calendar from "./components/calendar/Calendar";
+import "./components/calendar/styles/calendar.css"
+const App = () =>{
+    const [events,setEvents]=useState([])
+    useEffect(()=>{
+        fetch('http://localhost:5000/events')
+        .then(response => response.json())
+        .then(data =>  setEvents(data));
+       
+    },[])
+    return (
+        <div className="main-wrapper">
+            <Calendar Events={events} />
+        </div>
+       
+    )
 }
 
-export default App;
+export default App
