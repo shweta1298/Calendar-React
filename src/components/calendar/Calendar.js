@@ -17,8 +17,8 @@ function Calendar(props) {
     
     return (
         <div className='calendar-wrapper'>
-            <Header isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}  />
-            <Sidebar isOpen={isSidebarOpen} />
+            <Header isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}   />
+            <Sidebar isOpen={isSidebarOpen} currentMonth={currentMonth} />
             <Month currentMonth={currentMonth} isSidebarOpen={isSidebarOpen} events={Events}/>
         </div>
 
