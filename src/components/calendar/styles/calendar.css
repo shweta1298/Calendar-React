@@ -59,8 +59,8 @@
   align-items: center;
   justify-content: flex-start;
   padding-top: 20px;
-  transition: var(--animation-property) var(--animation-duration)
-    var(--animation-timing-curve);
+  /* transition: var(--animation-property) var(--animation-duration) */
+    /* var(--animation-timing-curve); */
   background-color: var(--background-color);
 }
 
@@ -68,8 +68,8 @@
   width: 60%;
   height: 40px;
   display: flex;
-  transition: var(--animation-property) var(--animation-duration)
-    var(--animation-timing-curve);
+  /* transition: var(--animation-property) var(--animation-duration) */
+    /* var(--animation-timing-curve); */
   white-space: nowrap;
 }
 .create-task-button {
@@ -90,27 +90,35 @@
   border: 0.15rem solid var(--border-color);
   border-radius: 0.25rem;
 }
-.sidebar-wrapper-open .create-task-button:hover {
+/* .sidebar-wrapper-open .create-task-button:hover {
   background-color: var(--foreground-color);
   color: var(--background-color);
   border: 0.15rem solid var(--foreground-color);
-}
-.sidebar-wrapper-open .create-task-button:hover {
+} */
+/* .sidebar-wrapper-open .create-task-button:hover {
   background-color: var(--foreground-color);
   color: var(--background-color);
   border: 0.15rem solid var(--foreground-color);
+} */
+.create-task-button:hover{
+  background-color: var(--foreground-color);
+  color: var(--background-color);
+  border: none;
 }
 .small-calendar-wrapper {
   height: 40%;
   width: 0%;
-  transition: all 1s ease-in;
+  /* transition: all 1s ease-in; */
+  display: flex;
+  flex-direction: column;
 }
 .sidebar-wrapper-open .small-calendar-wrapper {
   display: block;
-  width: 100%;
+  width: 70%;
   height: 40%;
-  transition: var(--animation-property) var(--animation-duration)
-    var(--animation-timing-curve);
+  padding: 20px;
+  /* transition: var(--animation-property) var(--animation-duration) */
+  /* var(--animation-timing-curve); */
 }
 .month-view-outer-wrapper-open {
   position: absolute;
@@ -246,13 +254,13 @@
   width: 100%;
   display: block;
 
-  transition: var(--animation-property) var(--animation-duration)
-    var(--animation-timing-curve) 2s;
+  /* transition: var(--animation-property) var(--animation-duration)
+    var(--animation-timing-curve) 2s; */
 }
-.create-task-title:hover {
+/* .create-task-title:hover {
   background-color: var(--foreground-color);
   color: var(--background-color);
-}
+} */
 .header-name {
   margin: auto;
   font-size: large;
@@ -352,9 +360,7 @@
   font-size: small;
   font-weight: 500;
 }
-.event-bar-wrapper{
 
-}
 .event-bar{
   background-color: skyblue;
   color: black;
@@ -384,7 +390,33 @@
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
   color: var(--foreground-color);
+  padding-top: 10px;
   /* background-color: black; */
-  gap: 6px;
+  gap: 10px;
   /* position: relative; */
+}
+.navigate-wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: row;
+  position: sticky;
+  padding-bottom: 6px;
+  height: 20px;
+}
+.small-calendar-day{
+  margin: auto;
+}
+.small-calendar-monthname{
+  position: absolute;
+  left: 2%;
+}
+.up-button{
+  position: absolute;
+  left: 75%;
+
+}
+.down-button{
+  position: absolute;
+  left: 93%;
 }
