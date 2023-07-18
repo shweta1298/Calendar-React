@@ -40,7 +40,7 @@ function Header(props) {
                 </button>
             </div>
             <div className='headername-wrapper'>
-                <span className='header-name'>Calendar React</span>
+                <span className='header-name'>React  Calendar</span>
             </div>
             <div className="month-header-wrapper">
                 <div className="prevmonth-button-wrapper">
