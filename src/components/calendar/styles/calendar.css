@@ -86,6 +86,7 @@
 .small-calendar-wrapper {
   height: 40%;
   display: flex;
+  width: 85%;
   flex-direction: column;
   padding: 20px;
 }
@@ -118,11 +119,7 @@
   transition: var(--animation-property) var(--animation-duration)
     var(--animation-timing-curve);
 }
-.month-header-wrapper {
-  background-color: var(--background-color);
-  width: 100%;
-  height: 5%;
-}
+
 .weekday-header-wrapper {
   height: 20%;
   width: 100%;
@@ -286,10 +283,15 @@
   justify-content: center;
 }
 .today-title {
+    font-size: small;
+    font-weight: 500;
+}
+.sc-today-title {
   background-color: var(--foreground-color);
-  width: 25px;
+  width: 80%;
   display: flex;
-  height: 25px;
+  height: 100%;
+  padding-inline: 2px;
   justify-content: center;
   align-items: center;
   color: var(--background-color);
@@ -318,13 +320,15 @@
 }
 .small-calendar {
   display: grid;
-  width: 80%;
+  width: 100%;
   height: 50%;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(6, 1fr);
   color: var(--foreground-color);
   padding-top: 10px;
-  gap: 10px;
+  /* gap: 8px; */
+  grid-column-gap: 12px;
+  grid-row-gap: 8px;
 }
 .navigate-wrapper {
   display: flex;
@@ -332,16 +336,22 @@
   justify-content: space-around;
   flex-direction: row;
   position: sticky;
-  padding-bottom: 6px;
+  /* padding-bottom: 6px; */
   height: 20px;
 }
-.small-calendar-day {
-  margin: auto;
+.small-calendar-day-wrapper {
+  /* margin: auto; */
   font-size: small;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.small-calendar-day-inactive {
-  margin: auto;
+.small-calendar-day-inactive-wrapper {
+  /* margin: auto; */
   font-size: small;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--border-color);
 }
 .small-calendar-monthname {
@@ -352,13 +362,34 @@
 .up-button {
   position: absolute;
   left: 75%;
+  cursor: pointer;
 }
 .down-button {
   position: absolute;
   left: 93%;
+  cursor: pointer;
+
 }
-.small-calendar-weekday-header-wrapper{
+.small-calendar-weekday-header-wrapper {
   font-size: small;
   color: var(--foreground-color);
-  /* padding-bottom: 4px; */
+  /* padding-top: 4px; */
+}
+.weekday-top-header {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+  grid-column-gap: 16px;
+  padding-top: 14px;
+  font-size: small;
+  padding-left: 2px;
+  height: 18px;
+  color: var;
+  font-weight: 600;
+  color: var(--foreground-color);
+}
+.weekday-headername{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

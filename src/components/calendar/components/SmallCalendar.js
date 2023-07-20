@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { getMonthName, getWeekDayName, getWeekDayShort, isCurrentMonth } from '../utils/dayUtils'
+import React, { useContext, useEffect, useLayoutEffect, useState } from 'react'
+import { getMonth, getMonthName, isCurrentMonth, isToday } from '../utils/dayUtils'
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import GlobalContext from '../context/GlobalContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,30 +8,61 @@ function SmallCalendar(props) {
     const {
         currentMonth
     } = props;
+
     const { monthIndex, year } = useContext(GlobalContext)
+    const [month,setMonth]=useState(currentMonth)
+    useLayoutEffect(()=>{
+        setMonth(currentMonth)
+    },[currentMonth])
+    const weekdays = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
+    function handlePrevMonth(e) {
+        // setMonth(getMonth(monthIndex-1))
+        // if (monthIndex - 1 === -1) {
+        //     // setYear(year - 1)
+        //     // setMonthIndex(11)
+        // } else
+            // setMonthIndex(monthIndex - 1)
+    }
+    function handleNextMonth(e) {
+        // if (monthIndex + 1 === 12) {
+        //     // setYear(year + 1)
+        //     // setMonthIndex(0)
+        // }
+        // else
+            // setMonthIndex(monthIndex + 1)
+    }
     return (
         <div className="small-calendar-wrapper">
             <div className="navigate-wrapper">
                 <div className="small-calendar-monthname">{getMonthName(monthIndex, year)}</div>
 
-                <div className="up-button">
+                <div className="up-button" onClick={handlePrevMonth}>
                     <FontAwesomeIcon icon={faChevronUp} size='sm' />
                 </div>
-                <div className="down-button">
+                <div className="down-button" onClick={handleNextMonth}>
                     <FontAwesomeIcon icon={faChevronDown} size='sm' />
                 </div>
             </div>
+            <div className="weekday-top-header">
+                {weekdays.map((weekDay) =>
+                    <div key={`${weekDay}`} className='weekday-headername'>
+                        {weekDay}
+                    </div>)}
+            </div>
             <div className="small-calendar">
-                {currentMonth.map((week, weekIndex) => week.map((day) => {
-                    return <div
-                        key={day.day()}
-                        className={isCurrentMonth(day.month(), monthIndex,) ? "small-calendar-day" : "small-calendar-day-inactive"}>
-                        {weekIndex === 0 && <div className='small-calendar-weekday-header-wrapper'> {getWeekDayShort(day.day())} </div>}
-                        {day.date()}
+                {month.map((week) => week.map((day) => {
+                    return <div key={day.day()} className={isCurrentMonth(day.month(), monthIndex,) ? "small-calendar-day-wrapper" : "small-calendar-day-inactive-wrapper"}>
+                        <div className='small-calendar-day'>
+                            <div className={isToday(day) ? 'sc-today-title' : 'sc-day-title'}>
+                                {day.date()}
+                            </div>
+
+
+                        </div>
                     </div>
                 }))}
             </div>
-        </div>
+        </div >
     )
 }
 
