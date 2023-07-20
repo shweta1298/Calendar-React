@@ -13,7 +13,9 @@ function Day(props) {
     const { monthIndex } = useContext(GlobalContext)
 
     return (
-        <div style={{ backgroundColor: isToday(day) ? 'var(--foreground-color)' : 'var(--background-color)' , color: isToday(day) ? 'var(--background-color)' : 'var(--foreground-color)'}}
+        <div 
+        // style={{ backgroundColor: isToday(day) ? 'var(--foreground-color)' : 'var(--background-color)' , 
+        // color: isToday(day) ? 'var(--background-color)' : 'var(--foregroun-color)'}}
             className={isCurrentMonth(day.month(), monthIndex,) ? 'day-wrapper' : 'inactive-day-wrapper'}>
             {weekIndex === 0 && <div className='weekday-header-wrapper'> {getWeekDayName(day.day())} </div>}
             <div className='day'>

@@ -11,9 +11,11 @@ function SmallCalendar(props) {
 
     const { monthIndex, year } = useContext(GlobalContext)
     const [month,setMonth]=useState(currentMonth)
+    const [monthName,setMonthName]=useState(getMonthName(monthIndex, year))
     useLayoutEffect(()=>{
         setMonth(currentMonth)
-    },[currentMonth])
+        setMonthName(getMonthName(monthIndex, year))
+    },[currentMonth,monthIndex,year])
     const weekdays = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
     function handlePrevMonth(e) {
         // setMonth(getMonth(monthIndex-1))
@@ -34,7 +36,7 @@ function SmallCalendar(props) {
     return (
         <div className="small-calendar-wrapper">
             <div className="navigate-wrapper">
-                <div className="small-calendar-monthname">{getMonthName(monthIndex, year)}</div>
+                <div className="small-calendar-monthname">{monthName}</div>
 
                 <div className="up-button" onClick={handlePrevMonth}>
                     <FontAwesomeIcon icon={faChevronUp} size='sm' />
